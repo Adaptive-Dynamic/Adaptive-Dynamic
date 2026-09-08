@@ -1,63 +1,406 @@
-# Adaptive-Dynamic
-Senior Design Project - Speed-Adaptive Long-Range Proximity Warning System
+<!-- ===================== HEADER ===================== -->
+
+<div align="center">
+
+# Speed-Adaptive Long-Range Proximity Warning System
+<!-- ===================== HEADER ===================== -->
+
+<div align="center">
+
+# Speed-Adaptive Long-Range Proximity Warning System
+
+### Driver Assistance System for Real-Time Safe Following Distance Detection
+
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Platform](https://img.shields.io/badge/Platform-Embedded%20System-blue)
+![Language](https://img.shields.io/badge/Language-C%20%7C%20C%2B%2B%20%7C%20Python-orange)
+![Hardware](https://img.shields.io/badge/Hardware-Custom%20Prototype-red)
+![Budget](https://img.shields.io/badge/Budget-%24240%20per%20student-green)
+
+</div>
+
+---
+
+<!-- ===================== BANNER ===================== -->
+
+<p align="center">
+  <img src="docs/images/project-banner.png" 
+       alt="Speed-Adaptive Long-Range Proximity Warning System Banner"
+       width="100%">
+</p>
+
+---
+
 ## Executive Summary
 
-Rear-end collisions can occur when drivers fail to recognize that a vehicle ahead is decelerating, particularly during extended highway driving where fatigue, distraction, or delayed reaction can increase stopping risk. Traditional proximity warning approaches may rely on fixed distance thresholds that do not adequately account for changes in vehicle speed and relative motion.
+Rear-end collisions can occur when drivers fail to recognize that a vehicle ahead is decelerating, particularly during extended highway driving where fatigue, distraction, or delayed reaction can increase stopping risk. Traditional proximity warning systems may rely on fixed distance thresholds that do not adequately account for changing vehicle speeds and relative motion.
 
 This project develops a **Speed-Adaptive Long-Range Proximity Warning System for Driver Assistance**. The system continuously monitors the host vehicle's speed, the relative motion of a leading vehicle, and the distance between the vehicles to determine whether the current following distance is safe.
 
-### System Overview
+Unlike a fixed-distance warning system, the proposed approach dynamically determines the required safe following distance based on vehicle speed and relative motion. This allows the warning threshold to adapt to changing driving conditions.
 
-The system will:
+---
 
-- Detect and track a leading vehicle using a long-range sensing technology.
-- Measure the relative distance and speed between the host and leading vehicles.
-- Acquire and process sensor data using an embedded controller.
-- Calculate the required safe following and braking distance in real time.
-- Compare the measured distance against the calculated safe distance.
-- Provide an audible warning when an unsafe following condition is detected.
+## System Overview
 
-Several sensing technologies will be evaluated:
+The proposed system consists of four primary functions:
 
-- **LiDAR**
-- **Infrared Rangefinders**
-- **Ultrasonic Sensors**
-- **Camera-Based Computer Vision**
+```text
+┌────────────────────┐
+│  Long-Range Sensor │
+│                    │
+│ LiDAR / IR /       │
+│ Ultrasonic /       │
+│ Computer Vision    │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Sensor Interface   │
+│ & Signal           │
+│ Conditioning       │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Embedded Controller│
+│                    │
+│ Data Acquisition   │
+│ Speed Processing   │
+│ Distance Processing│
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Safe-Distance      │
+│ Algorithm          │
+│                    │
+│ Speed + Relative   │
+│ Motion + Distance  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Warning System     │
+│                    │
+│ Audible Alert      │
+└────────────────────┘<!-- ===================== HEADER ===================== -->
 
-These technologies will be compared based on **range, accuracy, response time, cost, reliability, and implementation complexity** before selecting the most appropriate approach for the prototype.
+<div align="center">
 
-### Engineering Scope
+# Speed-Adaptive Long-Range Proximity Warning System
 
-The project will integrate the selected sensing technology with embedded processing, sensor interfaces, analog signal-conditioning circuitry, power regulation, and the driver warning system.
+### Driver Assistance System for Real-Time Safe Following Distance Detection
 
-A **speed-adaptive safe-distance algorithm** will continuously update the required braking distance based on the host vehicle's speed and relative motion with respect to the leading vehicle. When the measured following distance falls below the calculated safe distance, the system will activate an audible warning to notify the driver.
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Platform](https://img.shields.io/badge/Platform-Embedded%20System-blue)
+![Language](https://img.shields.io/badge/Language-C%20%7C%20C%2B%2B%20%7C%20Python-orange)
+![Hardware](https://img.shields.io/badge/Hardware-Custom%20Prototype-red)
+![Budget](https://img.shields.io/badge/Budget-%24240%20per%20student-green)
 
-### Testing & Validation
+</div>
 
-The completed system will be evaluated using representative vehicle-following and deceleration scenarios. Testing will assess:
+---
 
-- Distance measurement accuracy
-- Relative speed measurement accuracy
-- Warning response latency
-- Vehicle detection reliability
-- Safe-distance calculation performance
-- System stability
-- Overall prototype functionality
+<!-- ===================== BANNER ===================== -->
 
-Hardware and software will be iteratively refined based on testing results.
+<p align="center">
+  <img src="docs/images/project-banner.png" 
+       alt="Speed-Adaptive Long-Range Proximity Warning System Banner"
+       width="100%">
+</p>
 
-### Deliverables
+---
 
-The project will produce:
+## Executive Summary
 
-1. A fully operational proximity warning prototype
-2. Integrated sensing and embedded-processing hardware
-3. A real-time safe-distance calculation algorithm
-4. An audible driver-warning system
-5. Testing and validation results
-6. A user guide
-7. A maintenance manual
+Rear-end collisions can occur when drivers fail to recognize that a vehicle ahead is decelerating, particularly during extended highway driving where fatigue, distraction, or delayed reaction can increase stopping risk. Traditional proximity warning systems may rely on fixed distance thresholds that do not adequately account for changing vehicle speeds and relative motion.
 
-### Budget
+This project develops a **Speed-Adaptive Long-Range Proximity Warning System for Driver Assistance**. The system continuously monitors the host vehicle's speed, the relative motion of a leading vehicle, and the distance between the vehicles to determine whether the current following distance is safe.
 
-The complete system will be developed within the available budget of **$240 per student**.
+Unlike a fixed-distance warning system, the proposed approach dynamically determines the required safe following distance based on vehicle speed and relative motion. This allows the warning threshold to adapt to changing driving conditions.
+
+---
+
+## System Overview
+
+The proposed system consists of four primary functions:
+
+```text
+┌────────────────────┐
+│  Long-Range Sensor │
+│                    │
+│ LiDAR / IR /       │
+│ Ultrasonic /       │
+│ Computer Vision    │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Sensor Interface   │
+│ & Signal           │
+│ Conditioning       │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Embedded Controller│
+│                    │
+│ Data Acquisition   │
+│ Speed Processing   │
+│ Distance Processing│
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Safe-Distance      │
+│ Algorithm          │
+│                    │
+│ Speed + Relative   │
+│ Motion + Distance  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Warning System     │
+│                    │
+│ Audible Alert      │
+└────────────────────┘<!-- ===================== HEADER ===================== -->
+
+<div align="center">
+
+# Speed-Adaptive Long-Range Proximity Warning System
+
+### Driver Assistance System for Real-Time Safe Following Distance Detection
+
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Platform](https://img.shields.io/badge/Platform-Embedded%20System-blue)
+![Language](https://img.shields.io/badge/Language-C%20%7C%20C%2B%2B%20%7C%20Python-orange)
+![Hardware](https://img.shields.io/badge/Hardware-Custom%20Prototype-red)
+![Budget](https://img.shields.io/badge/Budget-%24240%20per%20student-green)
+
+</div>
+
+---
+
+<!-- ===================== BANNER ===================== -->
+
+<p align="center">
+  <img src="docs/images/project-banner.png" 
+       alt="Speed-Adaptive Long-Range Proximity Warning System Banner"
+       width="100%">
+</p>
+
+---
+
+## Executive Summary
+
+Rear-end collisions can occur when drivers fail to recognize that a vehicle ahead is decelerating, particularly during extended highway driving where fatigue, distraction, or delayed reaction can increase stopping risk. Traditional proximity warning systems may rely on fixed distance thresholds that do not adequately account for changing vehicle speeds and relative motion.
+
+This project develops a **Speed-Adaptive Long-Range Proximity Warning System for Driver Assistance**. The system continuously monitors the host vehicle's speed, the relative motion of a leading vehicle, and the distance between the vehicles to determine whether the current following distance is safe.
+
+Unlike a fixed-distance warning system, the proposed approach dynamically determines the required safe following distance based on vehicle speed and relative motion. This allows the warning threshold to adapt to changing driving conditions.
+
+---
+
+## System Overview
+
+The proposed system consists of four primary functions:
+
+```text
+┌────────────────────┐
+│  Long-Range Sensor │
+│                    │
+│ LiDAR / IR /       │
+│ Ultrasonic /       │
+│ Computer Vision    │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Sensor Interface   │
+│ & Signal           │
+│ Conditioning       │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Embedded Controller│
+│                    │
+│ Data Acquisition   │
+│ Speed Processing   │
+│ Distance Processing│
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Safe-Distance      │
+│ Algorithm          │
+│                    │
+│ Speed + Relative   │
+│ Motion + Distance  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Warning System     │
+│                    │
+│ Audible Alert      │
+└────────────────────┘<!-- ===================== HEADER ===================== -->
+
+<div align="center">
+
+# Speed-Adaptive Long-Range Proximity Warning System
+
+### Driver Assistance System for Real-Time Safe Following Distance Detection
+
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Platform](https://img.shields.io/badge/Platform-Embedded%20System-blue)
+![Language](https://img.shields.io/badge/Language-C%20%7C%20C%2B%2B%20%7C%20Python-orange)
+![Hardware](https://img.shields.io/badge/Hardware-Custom%20Prototype-red)
+![Budget](https://img.shields.io/badge/Budget-%24240%20per%20student-green)
+
+</div>
+
+---
+
+<!-- ===================== BANNER ===================== -->
+
+<p align="center">
+  <img src="docs/images/project-banner.png" 
+       alt="Speed-Adaptive Long-Range Proximity Warning System Banner"
+       width="100%">
+</p>
+
+---
+
+## Executive Summary
+
+Rear-end collisions can occur when drivers fail to recognize that a vehicle ahead is decelerating, particularly during extended highway driving where fatigue, distraction, or delayed reaction can increase stopping risk. Traditional proximity warning systems may rely on fixed distance thresholds that do not adequately account for changing vehicle speeds and relative motion.
+
+This project develops a **Speed-Adaptive Long-Range Proximity Warning System for Driver Assistance**. The system continuously monitors the host vehicle's speed, the relative motion of a leading vehicle, and the distance between the vehicles to determine whether the current following distance is safe.
+
+Unlike a fixed-distance warning system, the proposed approach dynamically determines the required safe following distance based on vehicle speed and relative motion. This allows the warning threshold to adapt to changing driving conditions.
+
+---
+
+## System Overview
+
+The proposed system consists of four primary functions:
+
+```text
+┌────────────────────┐
+│  Long-Range Sensor │
+│                    │
+│ LiDAR / IR /       │
+│ Ultrasonic /       │
+│ Computer Vision    │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Sensor Interface   │
+│ & Signal           │
+│ Conditioning       │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Embedded Controller│
+│                    │
+│ Data Acquisition   │
+│ Speed Processing   │
+│ Distance Processing│
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Safe-Distance      │
+│ Algorithm          │
+│                    │
+│ Speed + Relative   │
+│ Motion + Distance  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Warning System     │
+│                    │
+│ Audible Alert      │
+└────────────────────┘
+### Driver Assistance System for Real-Time Safe Following Distance Detection
+
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Platform](https://img.shields.io/badge/Platform-Embedded%20System-blue)
+![Language](https://img.shields.io/badge/Language-C%20%7C%20C%2B%2B%20%7C%20Python-orange)
+![Hardware](https://img.shields.io/badge/Hardware-Custom%20Prototype-red)
+![Budget](https://img.shields.io/badge/Budget-%24240%20per%20student-green)
+
+</div>
+
+---
+
+<!-- ===================== BANNER ===================== -->
+
+<p align="center">
+  <img src="docs/images/project-banner.png" 
+       alt="Speed-Adaptive Long-Range Proximity Warning System Banner"
+       width="100%">
+</p>
+
+---
+
+## Executive Summary
+
+Rear-end collisions can occur when drivers fail to recognize that a vehicle ahead is decelerating, particularly during extended highway driving where fatigue, distraction, or delayed reaction can increase stopping risk. Traditional proximity warning systems may rely on fixed distance thresholds that do not adequately account for changing vehicle speeds and relative motion.
+
+This project develops a **Speed-Adaptive Long-Range Proximity Warning System for Driver Assistance**. The system continuously monitors the host vehicle's speed, the relative motion of a leading vehicle, and the distance between the vehicles to determine whether the current following distance is safe.
+
+Unlike a fixed-distance warning system, the proposed approach dynamically determines the required safe following distance based on vehicle speed and relative motion. This allows the warning threshold to adapt to changing driving conditions.
+
+---
+
+## System Overview
+
+The proposed system consists of four primary functions:
+
+```text
+┌────────────────────┐
+│  Long-Range Sensor │
+│                    │
+│ LiDAR / IR /       │
+│ Ultrasonic /       │
+│ Computer Vision    │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Sensor Interface   │
+│ & Signal           │
+│ Conditioning       │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Embedded Controller│
+│                    │
+│ Data Acquisition   │
+│ Speed Processing   │
+│ Distance Processing│
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Safe-Distance      │
+│ Algorithm          │
+│                    │
+│ Speed + Relative   │
+│ Motion + Distance  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Warning System     │
+│                    │
+│ Audible Alert      │
+└────────────────────┘
