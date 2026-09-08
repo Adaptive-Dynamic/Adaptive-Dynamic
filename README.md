@@ -1,10 +1,63 @@
 # Adaptive-Dynamic
 Senior Design Project - Speed-Adaptive Long-Range Proximity Warning System
+## Executive Summary
 
-Rear-end collisions are a significant safety concern, particularly during highway driving when driver fatigue, distraction, or delayed reaction can prevent a driver from responding to a decelerating vehicle ahead. This project proposes the development of a speed-adaptive, long-range proximity warning system designed to provide drivers with an early warning when their following distance becomes unsafe. Unlike systems that rely primarily on fixed distance thresholds, the proposed system will continuously account for vehicle speed and relative motion to determine an appropriate safe following and braking distance.
+Rear-end collisions can occur when drivers fail to recognize that a vehicle ahead is decelerating, particularly during extended highway driving where fatigue, distraction, or delayed reaction can increase stopping risk. Traditional proximity warning approaches may rely on fixed distance thresholds that do not adequately account for changes in vehicle speed and relative motion.
 
-The system will integrate a long-range sensing technology to detect and monitor a leading vehicle, while an embedded controller will acquire sensor measurements, monitor vehicle speed and relative distance, and execute the safe-distance algorithm in real time. Several sensing technologies—including LiDAR, infrared rangefinders, ultrasonic sensors, and camera-based computer vision—will be evaluated based on detection range, measurement accuracy, response time, cost, and implementation complexity. The selected technology will be integrated with the necessary sensor interfaces, signal-conditioning circuitry, power regulation, embedded hardware, and audible warning system.
+This project develops a **Speed-Adaptive Long-Range Proximity Warning System for Driver Assistance**. The system continuously monitors the host vehicle's speed, the relative motion of a leading vehicle, and the distance between the vehicles to determine whether the current following distance is safe.
 
-A speed-adaptive algorithm will continuously calculate the required braking distance based on the host vehicle's speed and relative motion with respect to the leading vehicle. When the measured following distance falls below the calculated safe distance, the system will activate an audible warning with sufficiently low latency to provide the driver with adequate time to respond. The prototype will be evaluated through representative vehicle-following and deceleration scenarios to assess distance and speed measurement accuracy, warning response time, system reliability, and overall performance.
+### System Overview
 
-The project will culminate in a fully operational prototype demonstrating integrated sensing, embedded processing, real-time safe-distance calculation, and driver warning functionality. Hardware and software performance will be refined through iterative testing and validation. The completed system will be developed within the available budget of $240 per student and will be accompanied by a user guide and maintenance manual.
+The system will:
+
+- Detect and track a leading vehicle using a long-range sensing technology.
+- Measure the relative distance and speed between the host and leading vehicles.
+- Acquire and process sensor data using an embedded controller.
+- Calculate the required safe following and braking distance in real time.
+- Compare the measured distance against the calculated safe distance.
+- Provide an audible warning when an unsafe following condition is detected.
+
+Several sensing technologies will be evaluated:
+
+- **LiDAR**
+- **Infrared Rangefinders**
+- **Ultrasonic Sensors**
+- **Camera-Based Computer Vision**
+
+These technologies will be compared based on **range, accuracy, response time, cost, reliability, and implementation complexity** before selecting the most appropriate approach for the prototype.
+
+### Engineering Scope
+
+The project will integrate the selected sensing technology with embedded processing, sensor interfaces, analog signal-conditioning circuitry, power regulation, and the driver warning system.
+
+A **speed-adaptive safe-distance algorithm** will continuously update the required braking distance based on the host vehicle's speed and relative motion with respect to the leading vehicle. When the measured following distance falls below the calculated safe distance, the system will activate an audible warning to notify the driver.
+
+### Testing & Validation
+
+The completed system will be evaluated using representative vehicle-following and deceleration scenarios. Testing will assess:
+
+- Distance measurement accuracy
+- Relative speed measurement accuracy
+- Warning response latency
+- Vehicle detection reliability
+- Safe-distance calculation performance
+- System stability
+- Overall prototype functionality
+
+Hardware and software will be iteratively refined based on testing results.
+
+### Deliverables
+
+The project will produce:
+
+1. A fully operational proximity warning prototype
+2. Integrated sensing and embedded-processing hardware
+3. A real-time safe-distance calculation algorithm
+4. An audible driver-warning system
+5. Testing and validation results
+6. A user guide
+7. A maintenance manual
+
+### Budget
+
+The complete system will be developed within the available budget of **$240 per student**.
